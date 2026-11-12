@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env/
+jobs/
+*.egg-info/
+.pytest_cache/
+
+# local working plans — do not push
+PLAN.md
+*.local.md
+.plan/
