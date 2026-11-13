@@ -35,6 +35,12 @@ python src/tui.py --mode steered --sleep 0.08 --seed 7
 
 # baseline in TUI (auto-steer off)
 python src/tui.py --mode baseline --sleep 0.08 --seed 7
+
+# summarize / compare / plot
+python scripts/summarize_run.py results/baseline/metrics.jsonl results/steered/metrics.jsonl
+python scripts/compare_runs.py
+python scripts/plot_runs.py
+python scripts/plot_runs.py --lr   # loss + lr panels → results/figures/loss_curves.png
 ```
 
 ### TUI keys
