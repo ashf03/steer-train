@@ -41,6 +41,14 @@ python scripts/summarize_run.py results/baseline/metrics.jsonl results/steered/m
 python scripts/compare_runs.py
 python scripts/plot_runs.py
 python scripts/plot_runs.py --lr   # loss + lr panels → results/figures/loss_curves.png
+
+# one command: train + auto-steer together
+python scripts/run_steered.py --sleep 0.08 --seed 7
+python scripts/run_steered.py --sleep 0 --seed 7          # fast batch
+python scripts/run_steered.py --sleep 0.08 --seed 7 --dry-run
+
+# manual two-terminal / replay still available
+python scripts/steer_watch.py --replay --dry-run --metrics results/steered/metrics.jsonl
 ```
 
 ### TUI keys

@@ -26,3 +26,47 @@
 - **Action:** `lr` 0.05 → 0.02 via TUI (`configs/default.json`)
 - **Metrics:** `results/steered/metrics.jsonl`
 - **Outcome:** _(fill after run)_
+
+## Intervention (steer_watch dry-run)
+
+- **Timestamp:** 2026-11-23T14:57:08Z
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02 (dry-run — config not written)
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-23T14:57:13Z
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-23T14:57:35Z
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-23T14:57:55Z
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
