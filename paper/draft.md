@@ -23,8 +23,8 @@ result at zero. Metrics were appended as JSON Lines records containing step,
 loss, and learning rate.
 
 The baseline ran uninterrupted with learning rate 0.05; records are preserved
-in `results/baseline/metrics.jsonl`. The steered run began from the same
-configuration and seed; records are in `results/steered/metrics.jsonl`.
+in `results/pilot/baseline/metrics.jsonl`. The steered run began from the same
+configuration and seed; records are in `results/pilot/steered/metrics.jsonl`.
 Decisions used only already-emitted metrics. After observing a low but noisy
 loss regime through step 67, the runtime configuration was edited from
 learning rate 0.05 to 0.02. Because the trainer reloads the config file before

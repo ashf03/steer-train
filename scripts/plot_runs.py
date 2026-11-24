@@ -102,12 +102,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--baseline",
         type=Path,
-        default=Path("results/baseline/metrics.jsonl"),
+        default=Path("results/pilot/baseline/metrics.jsonl"),
     )
     p.add_argument(
         "--steered",
         type=Path,
-        default=Path("results/steered/metrics.jsonl"),
+        default=Path("results/pilot/steered/metrics.jsonl"),
     )
     p.add_argument(
         "--out",

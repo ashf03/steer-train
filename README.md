@@ -27,28 +27,23 @@ pip install -r requirements.txt
 ## Commands
 
 ```bash
-# fast batch (no TUI) — --sleep overrides JSON, leave configs/default.json alone
+# pilot artifacts live under results/pilot/ (do not overwrite)
+# new runs: results/steered/ or results/seed_<k>/
+
+# fast batch baseline
 python src/train.py --reset --sleep 0 --metrics results/baseline/metrics.jsonl
-
-# full TUI — steered mode with protocol auto-steer
-python src/tui.py --mode steered --sleep 0.08 --seed 7
-
-# baseline in TUI (auto-steer off)
-python src/tui.py --mode baseline --sleep 0.08 --seed 7
-
-# summarize / compare / plot
-python scripts/summarize_run.py results/baseline/metrics.jsonl results/steered/metrics.jsonl
-python scripts/compare_runs.py
-python scripts/plot_runs.py
-python scripts/plot_runs.py --lr   # loss + lr panels → results/figures/loss_curves.png
 
 # one command: train + auto-steer together
 python scripts/run_steered.py --sleep 0.08 --seed 7
-python scripts/run_steered.py --sleep 0 --seed 7          # fast batch
-python scripts/run_steered.py --sleep 0.08 --seed 7 --dry-run
+python scripts/run_steered.py --sleep 0 --seed 7
 
-# manual two-terminal / replay still available
-python scripts/steer_watch.py --replay --dry-run --metrics results/steered/metrics.jsonl
+# summarize / compare / plot (defaults = pilot)
+python scripts/summarize_run.py results/pilot/baseline/metrics.jsonl results/pilot/steered/metrics.jsonl
+python scripts/compare_runs.py
+python scripts/plot_runs.py --lr
+
+# TUI
+python src/tui.py --mode steered --sleep 0.08 --seed 7
 ```
 
 ### TUI keys
@@ -63,7 +58,8 @@ python scripts/steer_watch.py --replay --dry-run --metrics results/steered/metri
 
 ## Status
 
-Pilot (seed 7) done; claim frozen in `docs/protocol.md`. Matrix seeds still TODO.
+Pilot (seed 7) archived under `results/pilot/`. Claim frozen in `docs/protocol.md`.
+Matrix seeds still TODO.
 
 ## License
 

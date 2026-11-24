@@ -51,8 +51,9 @@ If the trigger never fires by step 99 → that seed is **inconclusive** (no stee
 | `src/train.py` | Headless trainer (`--sleep` overrides JSON delay) |
 | `src/tui.py` | Full-screen live steer TUI (auto + manual) |
 | `configs/default.json` | Live-editable hyperparameters |
-| `results/baseline/metrics.jsonl` | Uninterrupted control run (pilot) |
-| `results/steered/metrics.jsonl` | Live-steered run (pilot) |
+| `results/pilot/baseline/metrics.jsonl` | Pilot control run (frozen) |
+| `results/pilot/steered/metrics.jsonl` | Pilot live-steered run (frozen) |
+| `results/seed_<k>/…` | Matrix runs (upcoming) |
 | `docs/interventions.md` | Every intervene decision + outcome |
 | `paper/draft.md` | Methods / Results / Limitations |
 
@@ -64,7 +65,8 @@ Never mix baseline and steered metrics in one file.
 2. Run:
 
    ```bash
-   python3 src/train.py --reset --metrics results/baseline/metrics.jsonl
+   python3 src/train.py --reset --metrics results/pilot/baseline/metrics.jsonl
+   # (or results/seed_<k>/baseline/metrics.jsonl for matrix)
    ```
 
 3. Do not edit configuration, pause, restart, or otherwise intervene.
@@ -76,7 +78,8 @@ Never mix baseline and steered metrics in one file.
 2. Run:
 
    ```bash
-   python3 src/train.py --reset --metrics results/steered/metrics.jsonl
+   python3 src/train.py --reset --metrics results/pilot/steered/metrics.jsonl
+   # (or results/seed_<k>/steered/metrics.jsonl for matrix)
    ```
 
 3. Apply the **predeclared intervene rule** above (only).
