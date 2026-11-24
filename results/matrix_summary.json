@@ -1,0 +1,81 @@
+{
+  "seeds": [
+    {
+      "seed": 7,
+      "verdict": "fail",
+      "verdict_reason": "final_steered (0.037261) > 110% \u00d7 baseline (0.024606)",
+      "identical_prefix_length": 70,
+      "lr_change_step": 70,
+      "final_baseline": 0.022368699388470182,
+      "final_steered": 0.037261171193106915,
+      "final_rel": 0.6657728080655854,
+      "vol_baseline": 0.015385739759737416,
+      "vol_steered": 0.013772888663689037,
+      "baseline_path": "results/seed_7/baseline/metrics.jsonl",
+      "steered_path": "results/seed_7/steered/metrics.jsonl"
+    },
+    {
+      "seed": 11,
+      "verdict": "inconclusive",
+      "verdict_reason": "no lr change in steered run",
+      "identical_prefix_length": 100,
+      "lr_change_step": null,
+      "final_baseline": 0.11308511986957914,
+      "final_steered": 0.11308511986957914,
+      "final_rel": 0.0,
+      "vol_baseline": 0.011249445666403483,
+      "vol_steered": 0.011249445666403483,
+      "baseline_path": "results/seed_11/baseline/metrics.jsonl",
+      "steered_path": "results/seed_11/steered/metrics.jsonl"
+    },
+    {
+      "seed": 13,
+      "verdict": "fail",
+      "verdict_reason": "vol_steered (0.015595) \u2265 vol_baseline (0.011099); final_steered (0.080540) > 110% \u00d7 baseline (0.068227)",
+      "identical_prefix_length": 88,
+      "lr_change_step": 88,
+      "final_baseline": 0.06202494469412023,
+      "final_steered": 0.0805395335334832,
+      "final_rel": 0.2985023030761056,
+      "vol_baseline": 0.011098825130175677,
+      "vol_steered": 0.015595231498916553,
+      "baseline_path": "results/seed_13/baseline/metrics.jsonl",
+      "steered_path": "results/seed_13/steered/metrics.jsonl"
+    },
+    {
+      "seed": 17,
+      "verdict": "inconclusive",
+      "verdict_reason": "intervene late (first change at step 96 > 88)",
+      "identical_prefix_length": 96,
+      "lr_change_step": 96,
+      "final_baseline": 0.00611040545502909,
+      "final_steered": 0.00907763534017917,
+      "final_rel": 0.4856027815155768,
+      "vol_baseline": 0.017551013785445668,
+      "vol_steered": 0.016824708173043396,
+      "baseline_path": "results/seed_17/baseline/metrics.jsonl",
+      "steered_path": "results/seed_17/steered/metrics.jsonl"
+    },
+    {
+      "seed": 19,
+      "verdict": "fail",
+      "verdict_reason": "vol_steered (0.011787) \u2265 vol_baseline (0.011465)",
+      "identical_prefix_length": 83,
+      "lr_change_step": 83,
+      "final_baseline": 0.03469777357214858,
+      "final_steered": 0.03604487975582861,
+      "final_rel": 0.03882399488482835,
+      "vol_baseline": 0.011464843257158042,
+      "vol_steered": 0.011787452938417941,
+      "baseline_path": "results/seed_19/baseline/metrics.jsonl",
+      "steered_path": "results/seed_19/steered/metrics.jsonl"
+    }
+  ],
+  "aggregate": {
+    "n": 5,
+    "pass": 0,
+    "fail": 3,
+    "inconclusive": 2,
+    "matrix_call": "fail"
+  }
+}

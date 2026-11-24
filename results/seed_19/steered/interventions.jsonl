@@ -1,0 +1,2 @@
+{"config": "/Users/ashm/work/st/configs/default.json", "decision_step": 82, "dry_run": false, "effect_delay_steps": null, "effect_step": null, "evidence_steps": [80, 81, 82], "lr_from": 0.05, "lr_to": 0.02, "metrics": "/Users/ashm/work/st/results/seed_19/steered/metrics.jsonl", "timestamp": "2026-11-24T11:55:06Z"}
+{"decision_step": 82, "effect_delay_steps": 1, "effect_step": 83, "event": "effect_observed", "metrics": "/Users/ashm/work/st/results/seed_19/steered/metrics.jsonl", "timestamp": "2026-11-24T11:55:06Z"}

@@ -37,6 +37,9 @@ python src/train.py --reset --sleep 0 --metrics results/baseline/metrics.jsonl
 python scripts/run_steered.py --sleep 0.08 --seed 7
 python scripts/run_steered.py --sleep 0 --seed 7
 
+# full seed matrix → results/seed_<k>/ + results/matrix_summary.json
+python scripts/run_matrix.py --sleep 0
+
 # summarize / compare / plot (defaults = pilot)
 python scripts/summarize_run.py results/pilot/baseline/metrics.jsonl results/pilot/steered/metrics.jsonl
 python scripts/compare_runs.py
@@ -58,8 +61,11 @@ python src/tui.py --mode steered --sleep 0.08 --seed 7
 
 ## Status
 
-Pilot (seed 7) archived under `results/pilot/`. Claim frozen in `docs/protocol.md`.
-Matrix seeds still TODO.
+Pilot archived under `results/pilot/`. Toy matrix `{7,11,13,17,19}` —
+aggregate **FAIL** (`results/matrix_summary.json`).
+
+Scale target locked: `docs/protocol.scale.md` (S1 Qwen2.5-1.5B LoRA · Alpaca).  
+Tool MVP: `docs/tool-mvp.md`. Research brief: `log.md`.
 
 ## License
 

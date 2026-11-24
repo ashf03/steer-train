@@ -1,0 +1,8 @@
+{
+  "seed": 7,
+  "steps": 100,
+  "lr": 0.05,
+  "sleep_seconds": 0.1,
+  "sleep_override": 0.0,
+  "started_at": "2026-11-24T11:55:06Z"
+}

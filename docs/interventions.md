@@ -70,3 +70,47 @@
 - **Metrics:** `/Users/ashm/work/st/results/steered/metrics.jsonl`
 - **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
 - **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-24T11:55:06Z
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/seed_7/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-24T11:55:06Z
+- **Decision step:** 87
+- **Evidence steps:** [85, 86, 87]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/seed_13/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-24T11:55:06Z
+- **Decision step:** 95
+- **Evidence steps:** [93, 94, 95]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/seed_17/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-24T11:55:06Z
+- **Decision step:** 82
+- **Evidence steps:** [80, 81, 82]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/seed_19/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
