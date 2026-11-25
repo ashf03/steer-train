@@ -7,9 +7,8 @@ finish better than leaving it alone. **No aq.**
 
 ```
 configs/default.json     live-editable hyperparameters
-src/train.py             headless trainer (+ --sleep override)
-src/tui.py               full-screen live steer TUI
-requirements.txt         textual
+src/st_steer/            installable package (CLI: st)
+pyproject.toml           pip install -e . → console script st
 results/…/metrics.jsonl  run artifacts
 docs/protocol.md         frozen claim + intervene rule
 docs/interventions.md    intervene log
@@ -21,7 +20,8 @@ paper/draft.md           writeup
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -e .
+st doctor
 ```
 
 ## Commands
@@ -30,24 +30,36 @@ pip install -r requirements.txt
 # pilot artifacts live under results/pilot/ (do not overwrite)
 # new runs: results/steered/ or results/seed_<k>/
 
-# fast batch baseline
-python src/train.py --reset --sleep 0 --metrics results/baseline/metrics.jsonl
+st train --reset --sleep 0 --metrics results/baseline/metrics.jsonl
+st steer --sleep 0 --seed 7
+st matrix --sleep 0
 
-# one command: train + auto-steer together
-python scripts/run_steered.py --sleep 0.08 --seed 7
-python scripts/run_steered.py --sleep 0 --seed 7
+st summarize results/pilot/baseline/metrics.jsonl results/pilot/steered/metrics.jsonl
+st compare
+st plot --lr
 
-# full seed matrix → results/seed_<k>/ + results/matrix_summary.json
-python scripts/run_matrix.py --sleep 0
-
-# summarize / compare / plot (defaults = pilot)
-python scripts/summarize_run.py results/pilot/baseline/metrics.jsonl results/pilot/steered/metrics.jsonl
-python scripts/compare_runs.py
-python scripts/plot_runs.py --lr
-
-# TUI
-python src/tui.py --mode steered --sleep 0.08 --seed 7
+st tui --mode steered --sleep 0.08 --seed 7
+st watch --metrics results/steered/metrics.jsonl
+st validate results/pilot/baseline
+st compare --write   # also writes compare.json
+st adapters          # file-tail (toy) · callback (S1) · aq deferred
 ```
+
+Adapters: `docs/adapters.md`.
+
+## CI
+
+```bash
+pip install -e ".[dev]"
+pytest                 # includes full toy seed matrix harness
+```
+
+GitHub Actions runs doctor → unit tests → `st demo --toy` → full toy matrix.
+The matrix job stays **green when the harness works**, even if the research
+verdict is FAIL (current toy result).
+
+
+Legacy shims still work (`python src/train.py`, `python scripts/…`) but prefer `st …`.
 
 ### TUI keys
 

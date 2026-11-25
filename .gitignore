@@ -6,8 +6,14 @@ venv/
 .env/
 jobs/
 *.egg-info/
+dist/
+build/
 .pytest_cache/
+.coverage
+htmlcov/
 results/figures/
+results/_schema_smoke/
+results/ci/
 
 # local working plans — do not push
 PLAN.md

@@ -8,9 +8,8 @@ Name (working): **st** (steer). Rename later if needed; commands below use `st`.
 ## Install story (60 seconds)
 
 ```bash
-pip install st-steer          # placeholder PyPI name — wire in pyproject later
-# or from repo:
-pip install -e .
+pip install -e .              # package st-steer → console script st
+# later: pip install st-steer (PyPI)
 
 st doctor                     # python, GPU optional, schema OK
 st demo --toy                 # synthetic matrix path; no GPU
@@ -32,6 +31,7 @@ reading more than the README quickstart.
 | `st plot …` | curves → `figures/` |
 | `st matrix …` | multi-seed / multi-condition driver |
 | `st doctor` | environment + schema self-check |
+| `st validate PATH` | schema v1 check (metrics / snapshot / interventions / run dir) |
 | `st tui …` | live dashboard (optional) |
 
 Flags users actually need: `--sleep`, `--seed`, `--metrics`, `--dry-run`,
@@ -97,12 +97,13 @@ Script output: paths, primary metrics, ε check, per-pair verdict — machine-re
 
 ## Adapters (MVP order)
 
-1. **toy** — current synthetic trainer (CI always green)  
-2. **callback** — HF `TrainerCallback` / torch hook writes metrics + accepts LR set  
+1. **toy** — current synthetic trainer (CI always green — harness, not research PASS)  
+2. **callback** — HF `TrainerCallback` / `SteerHook` writes metrics + accepts LR set  
 3. **file-tail** — reloadable JSON config (today’s pattern)  
-4. **aq** — optional later, not required to install  
+4. **aq** — deferred (listed by `st adapters`, not implemented)
 
-Default path for S1: **callback** (reliable lag ≤1 step).
+Default path for S1: **callback** (reliable lag ≤1 step).  
+Details: `docs/adapters.md`.
 
 ## Demo script (must work)
 

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "st-steer"
+version = "0.1.0"
+description = "Live outer-loop training intervention (steer) — CLI + toy harness"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Ashm" }]
+keywords = ["ml", "training", "intervention", "steering", "reproducibility"]
+dependencies = [
+  "textual>=1.0.0",
+  "matplotlib>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+]
+s1 = [
+  "torch",
+  "transformers",
+  "datasets",
+  "peft",
+  "accelerate",
+]
+
+[project.scripts]
+st = "st_steer.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Aquinf03/st"
+Documentation = "docs/tool-mvp.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+st_steer = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]

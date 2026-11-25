@@ -1,0 +1,61 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  toy:
+    name: toy-harness (py${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install -U pip
+          pip install -e ".[dev]"
+
+      - name: Doctor
+        run: st doctor
+
+      - name: Unit + adapter + schema tests
+        run: pytest -q tests/test_schema.py tests/test_rules.py tests/test_adapters.py tests/test_cli_smoke.py
+
+      - name: Demo --toy (pilot artifacts)
+        run: st demo --toy
+
+      - name: Full toy matrix harness
+        # Research verdict may be FAIL; CI asserts harness completion + schema.
+        run: |
+          pytest -q tests/test_toy_matrix.py -k full_toy_matrix --tb=short
+
+      - name: Show matrix call (informational)
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          # pytest tmp dirs are gone; re-run a quick aggregate print from committed summary if present
+          p = pathlib.Path("results/matrix_summary.json")
+          if p.exists():
+              d = json.loads(p.read_text())
+              print("committed aggregate:", d.get("aggregate"))
+          else:
+              print("no committed matrix_summary.json")
+          PY

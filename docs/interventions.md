@@ -114,3 +114,27 @@
 - **Metrics:** `/Users/ashm/work/st/results/seed_19/steered/metrics.jsonl`
 - **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
 - **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-25T22:06:03Z
+- **Rule:** `toy-loss-streak-cut-lr`
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/_schema_smoke/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
+
+## Intervention (steer_watch)
+
+- **Timestamp:** 2026-11-25T22:08:33Z
+- **Rule:** `toy-loss-streak-cut-lr`
+- **Decision step:** 69
+- **Evidence steps:** [67, 68, 69]
+- **Action:** `lr` 0.05 → 0.02
+- **Config:** `/Users/ashm/work/st/configs/default.json`
+- **Metrics:** `/Users/ashm/work/st/results/_schema_smoke/steered/metrics.jsonl`
+- **Decision→effect delay (steps):** _(pending — waiting for lr in metrics)_
+- **Outcome:** _(fill after run / compare_runs)_
